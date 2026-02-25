@@ -1,0 +1,22 @@
+@import "tailwindcss";
+@import "../styles/tokens.css";
+@import "../styles/theme.css";
+
+/* 
+ * Global Styles
+ * 
+ * Token files (tokens.css, theme.css) are auto-generated.
+ * Run 'npm run tokens:build' to regenerate from tokens.json.
+ * 
+ * DO NOT add token-related styles here - update Figma instead!
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+}

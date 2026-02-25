@@ -1,0 +1,64 @@
+/**
+ * Design Tokens - Auto-generated from tokens.json
+ * DO NOT EDIT MANUALLY - Run 'npm run tokens:build' to regenerate
+ * Source: Figma Token Studio
+ */
+
+:root {
+
+  /* ===== Base Colors ===== */
+
+  /* ===== Fill Colors (backgrounds) ===== */
+
+  /* ===== Stroke Colors (borders) ===== */
+
+  /* ===== Text Colors ===== */
+
+  /* ===== Spacing ===== */
+
+  /* ===== Sizes ===== */
+
+  /* ===== Border Radius ===== */
+
+
+  /* ===== Component Tokens ===== */
+  --button-primary-fill: var(--fill-green);
+  --button-primary-stroke: var(--button-primary-fill);
+  --button-primary-fill-hover: var(--fill-green-darker);
+  --button-primary-stroke-hover: var(--stroke-green-light);
+  --button-primary-fill-disabled: var(--fill-green-light);
+  --button-primary-stroke-disabled: var(--stroke-green-lighter);
+  --button-primary-text: var(--text-white);
+  --button-primary-text-hover: var(--text-white);
+  --button-primary-text-disabled: var(--text-white);
+  --button-secondary-fill: var(--fill-transparent);
+  --button-secondary-fill-hover: var(--fill-gray-lightest);
+  --button-secondary-fill-disabled: var(--fill-gray-lighter);
+  --button-secondary-stroke: var(--stroke-gray-light);
+  --button-secondary-stroke-hover: var(--stroke-gray-light);
+  --button-secondary-stroke-disabled: var(--stroke-gray-lighter);
+  --button-secondary-text: var(--text-default);
+  --button-secondary-text-hover: var(--text-default);
+  --button-secondary-text-disabled: var(--text-default-lighter);
+  --button-tertiary-fill: var(--fill-transparent);
+  --button-tertiary-fill-hover: var(--fill-transparent);
+  --button-tertiary-fill-disabled: var(--fill-transparent);
+  --button-tertiary-text: var(--text-success);
+  --button-tertiary-text-hover: var(--text-success);
+  --button-tertiary-text-disabled: var(--text-default-lightest);
+  --button-tertiary-stroke: var(--stroke-transparent);
+  --button-tertiary-stroke-hover: var(--stroke-transparent);
+  --button-tertiary-stroke-disabled: var(--stroke-transparent);
+  --button-font-size-sm: var(--base-font-size-sm);
+  --button-font-size-md: var(--base-font-size-md);
+  --button-font-size-lg: var(--base-font-size-lg);
+  --button-line-height-sm: var(--base-line-height-md);
+  --button-line-height-md: var(--base-line-height-lg);
+  --button-line-height-lg: var(--base-line-height-2xl);
+  --button-radius-sm: var(--base-radius-sm);
+  --button-radius-md: var(--base-radius-md);
+  --button-radius-lg: var(--base-radius-md);
+  --button-height-sm: var(--base-size-3xl);
+  --button-height-md: var(--base-size-4xl);
+  --button-height-lg: var(--base-size-6xl);
+}

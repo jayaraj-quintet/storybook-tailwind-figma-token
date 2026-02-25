@@ -1,0 +1,61 @@
+/**
+ * Tailwind Theme - Auto-generated from tokens.json
+ * DO NOT EDIT MANUALLY - Run 'npm run tokens:build' to regenerate
+ * 
+ * Usage:
+ * - bg-blue, bg-green, bg-rose (backgrounds from fill tokens)
+ * - text-danger, text-success, text-rose (text from text tokens)
+ * - border-blue, border-green, border-rose (borders from stroke tokens)
+ * - p-lg, m-md, gap-sm (spacing)
+ * - rounded-md, rounded-lg (border radius)
+ */
+
+@theme inline {
+  /* ===== Border Radius (rounded-*) ===== */
+}
+
+/* ===== Background Color Utilities (from fill tokens) ===== */
+
+/* ===== Text Color Utilities (from text tokens) ===== */
+
+/* ===== Border Color Utilities (from stroke tokens) ===== */
+
+/* ===== Spacing Utilities (auto-generated) ===== */
+
+/* ===== Component Token Utilities ===== */
+.bg-button-primary-fill { background-color: var(--button-primary-fill); }
+.border-button-primary-stroke { border-color: var(--button-primary-stroke); }
+.bg-button-primary-fill-hover { background-color: var(--button-primary-fill-hover); }
+.hover\:bg-button-primary-fill-hover:hover { background-color: var(--button-primary-fill-hover); }
+.border-button-primary-stroke-hover { border-color: var(--button-primary-stroke-hover); }
+.hover\:border-button-primary-stroke-hover:hover { border-color: var(--button-primary-stroke-hover); }
+.bg-button-primary-fill-disabled { background-color: var(--button-primary-fill-disabled); }
+.border-button-primary-stroke-disabled { border-color: var(--button-primary-stroke-disabled); }
+.text-button-primary-text { color: var(--button-primary-text); }
+.text-button-primary-text-hover { color: var(--button-primary-text-hover); }
+.hover\:text-button-primary-text-hover:hover { color: var(--button-primary-text-hover); }
+.text-button-primary-text-disabled { color: var(--button-primary-text-disabled); }
+.bg-button-secondary-fill { background-color: var(--button-secondary-fill); }
+.bg-button-secondary-fill-hover { background-color: var(--button-secondary-fill-hover); }
+.hover\:bg-button-secondary-fill-hover:hover { background-color: var(--button-secondary-fill-hover); }
+.bg-button-secondary-fill-disabled { background-color: var(--button-secondary-fill-disabled); }
+.border-button-secondary-stroke { border-color: var(--button-secondary-stroke); }
+.border-button-secondary-stroke-hover { border-color: var(--button-secondary-stroke-hover); }
+.hover\:border-button-secondary-stroke-hover:hover { border-color: var(--button-secondary-stroke-hover); }
+.border-button-secondary-stroke-disabled { border-color: var(--button-secondary-stroke-disabled); }
+.text-button-secondary-text { color: var(--button-secondary-text); }
+.text-button-secondary-text-hover { color: var(--button-secondary-text-hover); }
+.hover\:text-button-secondary-text-hover:hover { color: var(--button-secondary-text-hover); }
+.text-button-secondary-text-disabled { color: var(--button-secondary-text-disabled); }
+.bg-button-tertiary-fill { background-color: var(--button-tertiary-fill); }
+.bg-button-tertiary-fill-hover { background-color: var(--button-tertiary-fill-hover); }
+.hover\:bg-button-tertiary-fill-hover:hover { background-color: var(--button-tertiary-fill-hover); }
+.bg-button-tertiary-fill-disabled { background-color: var(--button-tertiary-fill-disabled); }
+.text-button-tertiary-text { color: var(--button-tertiary-text); }
+.text-button-tertiary-text-hover { color: var(--button-tertiary-text-hover); }
+.hover\:text-button-tertiary-text-hover:hover { color: var(--button-tertiary-text-hover); }
+.text-button-tertiary-text-disabled { color: var(--button-tertiary-text-disabled); }
+.border-button-tertiary-stroke { border-color: var(--button-tertiary-stroke); }
+.border-button-tertiary-stroke-hover { border-color: var(--button-tertiary-stroke-hover); }
+.hover\:border-button-tertiary-stroke-hover:hover { border-color: var(--button-tertiary-stroke-hover); }
+.border-button-tertiary-stroke-disabled { border-color: var(--button-tertiary-stroke-disabled); }
