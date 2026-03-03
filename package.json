@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "tokens:build": "node scripts/build-tokens.mjs",
-    "dev": "npm run tokens:build && next dev",
-    "build": "npm run tokens:build && next build",
+    "tokens:map": "node scripts/generate-token-map.mjs",
+    "dev": "npm run tokens:map && next dev",
+    "build": "npm run tokens:map && next build",
     "start": "next start",
     "lint": "eslint",
     "storybook": "storybook dev -p 6006",

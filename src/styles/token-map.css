@@ -1,0 +1,207 @@
+/**
+ * Tailwind v4 Token Mapping — AUTO-GENERATED
+ * Generated: 2026-03-03T05:25:59.009Z
+ * Source: tailwind.css (Supernova.io output)
+ * 
+ * DO NOT EDIT — Re-run: npm run tokens:map
+ * 
+ * This file bridges Supernova's --fill-color-*, --stroke-color-*,
+ * --text-color-* variables to Tailwind v4's --color-* namespace
+ * so utility classes like bg-fill-*, text-text-*, border-stroke-*
+ * are auto-generated.
+ */
+
+@theme inline {
+
+  /* ═══ Fill Colors → bg-fill-*, etc. ═══
+   * Usage: bg-fill-button-primary, bg-fill-purple, bg-fill-gray-lightest
+   */
+  --color-fill-transparent: var(--fill-color-transparent);
+  --color-fill-black: var(--fill-color-black);
+  --color-fill-white: var(--fill-color-white);
+  --color-fill-green-darker: var(--fill-color-green-darker);
+  --color-fill-green: var(--fill-color-green);
+  --color-fill-green-light: var(--fill-color-green-light);
+  --color-fill-green-lightest: var(--fill-color-green-lightest);
+  --color-fill-green-faint: var(--fill-color-green-faint);
+  --color-fill-blue-darker: var(--fill-color-blue-darker);
+  --color-fill-blue-dark: var(--fill-color-blue-dark);
+  --color-fill-blue: var(--fill-color-blue);
+  --color-fill-blue-light: var(--fill-color-blue-light);
+  --color-fill-blue-lighter: var(--fill-color-blue-lighter);
+  --color-fill-blue-lightest: var(--fill-color-blue-lightest);
+  --color-fill-blue-faint: var(--fill-color-blue-faint);
+  --color-fill-gray-darker: var(--fill-color-gray-darker);
+  --color-fill-gray-dark: var(--fill-color-gray-dark);
+  --color-fill-gray: var(--fill-color-gray);
+  --color-fill-gray-light: var(--fill-color-gray-light);
+  --color-fill-gray-lighter: var(--fill-color-gray-lighter);
+  --color-fill-gray-lightest: var(--fill-color-gray-lightest);
+  --color-fill-gray-faint: var(--fill-color-gray-faint);
+  --color-fill-orange: var(--fill-color-orange);
+  --color-fill-orange-light: var(--fill-color-orange-light);
+  --color-fill-orange-lightest: var(--fill-color-orange-lightest);
+  --color-fill-red: var(--fill-color-red);
+  --color-fill-red-dark: var(--fill-color-red-dark);
+  --color-fill-red-light: var(--fill-color-red-light);
+  --color-fill-red-lightest: var(--fill-color-red-lightest);
+  --color-fill-red-faint: var(--fill-color-red-faint);
+  --color-fill-yellow: var(--fill-color-yellow);
+  --color-fill-yellow-light: var(--fill-color-yellow-light);
+  --color-fill-yellow-lightest: var(--fill-color-yellow-lightest);
+  --color-fill-purple-dark: var(--fill-color-purple-dark);
+  --color-fill-purple: var(--fill-color-purple);
+  --color-fill-purple-light: var(--fill-color-purple-light);
+  --color-fill-purple-lightest: var(--fill-color-purple-lightest);
+  --color-fill-purple-faint: var(--fill-color-purple-faint);
+  --color-fill-pink: var(--fill-color-pink);
+  --color-fill-button-primary: var(--fill-color-button-primary);
+  --color-fill-button-secondary: var(--fill-color-button-secondary);
+  --color-fill-button-secondary-hover: var(--fill-color-button-secondary-hover);
+  --color-fill-button-secondary-disabled: var(--fill-color-button-secondary-disabled);
+  --color-fill-button-primary-hover: var(--fill-color-button-primary-hover);
+  --color-fill-button-primary-disabled: var(--fill-color-button-primary-disabled);
+  --color-fill-button-tertiary: var(--fill-color-button-tertiary);
+  --color-fill-button-tertiary-hover: var(--fill-color-button-tertiary-hover);
+  --color-fill-button-tertiary-disabled: var(--fill-color-button-tertiary-disabled);
+
+  /* ═══ Stroke Colors → border-stroke-*, etc. ═══
+   * Usage: border-stroke-button-primary, border-stroke-purple
+   */
+  --color-stroke-transparent: var(--stroke-color-transparent);
+  --color-stroke-white: var(--stroke-color-white);
+  --color-stroke-gray: var(--stroke-color-gray);
+  --color-stroke-gray-light: var(--stroke-color-gray-light);
+  --color-stroke-gray-lighter: var(--stroke-color-gray-lighter);
+  --color-stroke-gray-lightest: var(--stroke-color-gray-lightest);
+  --color-stroke-green: var(--stroke-color-green);
+  --color-stroke-green-light: var(--stroke-color-green-light);
+  --color-stroke-green-lighter: var(--stroke-color-green-lighter);
+  --color-stroke-blue: var(--stroke-color-blue);
+  --color-stroke-blue-dark: var(--stroke-color-blue-dark);
+  --color-stroke-blue-light: var(--stroke-color-blue-light);
+  --color-stroke-blue-lighter: var(--stroke-color-blue-lighter);
+  --color-stroke-red: var(--stroke-color-red);
+  --color-stroke-red-light: var(--stroke-color-red-light);
+  --color-stroke-red-lighter: var(--stroke-color-red-lighter);
+  --color-stroke-orange: var(--stroke-color-orange);
+  --color-stroke-orange-light: var(--stroke-color-orange-light);
+  --color-stroke-orange-lighter: var(--stroke-color-orange-lighter);
+  --color-stroke-yellow: var(--stroke-color-yellow);
+  --color-stroke-yellow-light: var(--stroke-color-yellow-light);
+  --color-stroke-yellow-lighter: var(--stroke-color-yellow-lighter);
+  --color-stroke-purple: var(--stroke-color-purple);
+  --color-stroke-purple-light: var(--stroke-color-purple-light);
+  --color-stroke-purple-lighter: var(--stroke-color-purple-lighter);
+  --color-stroke-button-secondary: var(--stroke-color-button-secondary);
+  --color-stroke-button-secondary-hover: var(--stroke-color-button-secondary-hover);
+  --color-stroke-button-secondary-disabled: var(--stroke-color-button-secondary-disabled);
+  --color-stroke-button-primary: var(--stroke-color-button-primary);
+  --color-stroke-button-primary-hover: var(--stroke-color-button-primary-hover);
+  --color-stroke-button-primary-disabled: var(--stroke-color-button-primary-disabled);
+  --color-stroke-button-tertiary: var(--stroke-color-button-tertiary);
+  --color-stroke-button-tertiary-hover: var(--stroke-color-button-tertiary-hover);
+  --color-stroke-button-tertiary-disabled: var(--stroke-color-button-tertiary-disabled);
+
+  /* ═══ Text Colors → text-text-*, etc. ═══
+   * Usage: text-text-default, text-text-button-primary, text-text-ai
+   */
+  --color-text-stroke: var(--text-color-stroke);
+  --color-text-default: var(--text-color-default);
+  --color-text-default-light: var(--text-color-default-light);
+  --color-text-default-lighter: var(--text-color-default-lighter);
+  --color-text-default-lightest: var(--text-color-default-lightest);
+  --color-text-white: var(--text-color-white);
+  --color-text-success: var(--text-color-success);
+  --color-text-alert: var(--text-color-alert);
+  --color-text-warning: var(--text-color-warning);
+  --color-text-danger: var(--text-color-danger);
+  --color-text-link: var(--text-color-link);
+  --color-text-link-hover: var(--text-color-link-hover);
+  --color-text-link-inactive: var(--text-color-link-inactive);
+  --color-text-link-visited: var(--text-color-link-visited);
+  --color-text-ai: var(--text-color-ai);
+  --color-text-button-secondary: var(--text-color-button-secondary);
+  --color-text-button-secondary-hover: var(--text-color-button-secondary-hover);
+  --color-text-button-secondary-disabled: var(--text-color-button-secondary-disabled);
+  --color-text-button-primary: var(--text-color-button-primary);
+  --color-text-button-primary-hover: var(--text-color-button-primary-hover);
+  --color-text-button-primary-disabled: var(--text-color-button-primary-disabled);
+  --color-text-button-tertiary: var(--text-color-button-tertiary);
+  --color-text-button-tertiary-hover: var(--text-color-button-tertiary-hover);
+  --color-text-button-tertiary-disabled: var(--text-color-button-tertiary-disabled);
+
+  /* ═══ Spacing → p-*, m-*, gap-* ═══
+   * Usage: p-sm, mx-lg, gap-2xl
+   */
+  --spacing-zero: var(--base-space-zero);
+  --spacing-4xs: var(--base-space-4xs);
+  --spacing-3xs: var(--base-space-3xs);
+  --spacing-2xs: var(--base-space-2xs);
+  --spacing-xs: var(--base-space-xs);
+  --spacing-sm: var(--base-space-sm);
+  --spacing-md: var(--base-space-md);
+  --spacing-lg: var(--base-space-lg);
+  --spacing-xl: var(--base-space-xl);
+  --spacing-2xl: var(--base-space-2xl);
+  --spacing-3xl: var(--base-space-3xl);
+  --spacing-4xl: var(--base-space-4xl);
+  --spacing-5xl: var(--base-space-5xl);
+  --spacing-6xl: var(--base-space-6xl);
+
+  /* ═══ Border Radius → rounded-* ═══
+   * Usage: rounded-sm, rounded-lg, rounded-round
+   */
+  --radius-zero: var(--base-radius-zero);
+  --radius-xs: var(--base-radius-xs);
+  --radius-sm: var(--base-radius-sm);
+  --radius-md: var(--base-radius-md);
+  --radius-lg: var(--base-radius-lg);
+  --radius-xl: var(--base-radius-xl);
+  --radius-2xl: var(--base-radius-2xl);
+  --radius-round: var(--base-radius-round);
+
+  /* ═══ Sizes → w-size-*, h-size-* (via --spacing) ═══
+   * Tailwind uses --spacing for width/height utilities too
+   * Usage: h-size-3xl, w-size-6xl
+   */
+  --spacing-size-zero: var(--base-size-zero);
+  --spacing-size-4xs: var(--base-size-4xs);
+  --spacing-size-3xs: var(--base-size-3xs);
+  --spacing-size-2xs: var(--base-size-2xs);
+  --spacing-size-xs: var(--base-size-xs);
+  --spacing-size-sm: var(--base-size-sm);
+  --spacing-size-md: var(--base-size-md);
+  --spacing-size-lg: var(--base-size-lg);
+  --spacing-size-xl: var(--base-size-xl);
+  --spacing-size-2xl: var(--base-size-2xl);
+  --spacing-size-3xl: var(--base-size-3xl);
+  --spacing-size-4xl: var(--base-size-4xl);
+  --spacing-size-5xl: var(--base-size-5xl);
+  --spacing-size-6xl: var(--base-size-6xl);
+  --spacing-size-7xl: var(--base-size-7xl);
+  --spacing-size-8xl: var(--base-size-8xl);
+
+  /* ═══ Font Sizes → text-fs-* ═══
+   * Usage: text-fs-sm, text-fs-lg, text-fs-2xl
+   */
+  --font-size-fs-xs: var(--base-font-size-xs);
+  --font-size-fs-sm: var(--base-font-size-sm);
+  --font-size-fs-md: var(--base-font-size-md);
+  --font-size-fs-lg: var(--base-font-size-lg);
+  --font-size-fs-xl: var(--base-font-size-xl);
+  --font-size-fs-2xl: var(--base-font-size-2xl);
+  --font-size-fs-3xl: var(--base-font-size-3xl);
+  --font-size-fs-4xl: var(--base-font-size-4xl);
+
+  /* ═══ Line Heights → leading-lh-* ═══
+   * Usage: leading-lh-sm, leading-lh-lg
+   */
+  --line-height-lh-xs: var(--base-line-height-xs);
+  --line-height-lh-sm: var(--base-line-height-sm);
+  --line-height-lh-md: var(--base-line-height-md);
+  --line-height-lh-lg: var(--base-line-height-lg);
+  --line-height-lh-2xl: var(--base-line-height-2xl);
+  --line-height-lh-3xl: var(--base-line-height-3xl);
+  --line-height-lh-4xl: var(--base-line-height-4xl);
+}

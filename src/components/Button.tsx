@@ -40,29 +40,29 @@ const Spinner = ({ className }: { className?: string }) => (
 
 const variantStyles: Record<ButtonVariant, { base: string; hover: string; hoverStatic: string; disabled: string }> = {
     primary: {
-        base: 'bg-button-primary-fill text-button-primary-text border border-button-primary-stroke',
-        hover: 'hover:bg-button-primary-fill-hover hover:border-button-primary-stroke-hover',
-        hoverStatic: 'bg-button-primary-fill-hover border-button-primary-stroke-hover text-button-primary-text',
-        disabled: 'bg-button-primary-fill-disabled border-button-primary-stroke-disabled text-button-primary-text cursor-not-allowed',
+        base: 'bg-fill-button-primary text-text-button-primary border border-stroke-button-primary',
+        hover: 'hover:bg-fill-button-primary-hover hover:border-stroke-button-primary-hover',
+        hoverStatic: 'bg-fill-button-primary-hover border-stroke-button-primary-hover text-text-button-primary',
+        disabled: 'bg-fill-button-primary-disabled border-stroke-button-primary-disabled text-text-button-primary-disabled cursor-not-allowed',
     },
     secondary: {
-        base: 'bg-button-secondary-fill text-button-secondary-text border border-button-secondary-stroke',
-        hover: 'hover:bg-button-secondary-fill-hover hover:border-button-secondary-stroke-hover',
-        hoverStatic: 'bg-button-secondary-fill-hover border-button-secondary-stroke-hover text-button-secondary-text',
-        disabled: 'bg-button-secondary-fill-disabled border-button-secondary-stroke-disabled text-button-secondary-text-disabled cursor-not-allowed',
+        base: 'bg-fill-button-secondary text-text-button-secondary border border-stroke-button-secondary',
+        hover: 'hover:bg-fill-button-secondary-hover hover:border-stroke-button-secondary-hover',
+        hoverStatic: 'bg-fill-button-secondary-hover border-stroke-button-secondary-hover text-text-button-secondary',
+        disabled: 'bg-fill-button-secondary-disabled border-stroke-button-secondary-disabled text-text-button-secondary-disabled cursor-not-allowed',
     },
     tertiary: {
-        base: 'bg-button-tertiary-fill text-button-tertiary-text border border-button-tertiary-stroke',
-        hover: 'hover:text-button-tertiary-text-hover border border-button-tertiary-stroke',
-        hoverStatic: 'text-button-tertiary-text-hover border border-button-tertiary-stroke',
-        disabled: 'text-button-tertiary-text-disabled cursor-not-allowed border border-button-tertiary-stroke',
+        base: 'bg-fill-button-tertiary text-text-button-tertiary border border-stroke-button-tertiary',
+        hover: 'hover:text-text-button-tertiary-hover border border-stroke-button-tertiary',
+        hoverStatic: 'text-text-button-tertiary-hover border border-stroke-button-tertiary',
+        disabled: 'text-text-button-tertiary-disabled cursor-not-allowed border border-stroke-button-tertiary',
     },
 };
 
 const sizeStyles: Record<ButtonSize, string> = {
-    sm: 'px-sm py-xs text-xs leading-5 rounded-sm h-8',
-    md: 'px-md py-xs text-sm leading-6 rounded-md h-9',
-    lg: 'px-md py-sm text-base leading-7 rounded-md h-11',
+    sm: 'px-[var(--button-padding-x-sm)] py-[var(--button-padding-y-sm)] text-fs-sm leading-lh-md rounded-[var(--button-radius-sm)] h-[var(--button-height-sm)]',
+    md: 'px-[var(--button-padding-x-md)] py-[var(--button-padding-y-md)] text-fs-md leading-lh-lg rounded-[var(--button-radius-md)] h-[var(--button-height-md)]',
+    lg: 'px-[var(--button-padding-x-lg)] py-[var(--button-padding-y-lg)] text-fs-lg leading-lh-2xl rounded-[var(--button-radius-lg)] h-[var(--button-height-lg)]',
 };
 
 // Icon size classes based on button size
