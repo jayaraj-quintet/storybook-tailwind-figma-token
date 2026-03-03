@@ -1,23 +1,30 @@
-import { ButtonHTMLAttributes, ReactNode } from 'react';
+import { forwardRef, type ButtonHTMLAttributes, type ReactNode } from 'react';
+import { Slot, Slottable } from '@radix-ui/react-slot';
+import { cn } from '@/lib/utils';
+
+// ── Types ────────────────────────────────────────────────────────
 
 type ButtonVariant = 'primary' | 'secondary' | 'tertiary';
 type ButtonSize = 'sm' | 'md' | 'lg';
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     children: ReactNode;
     variant?: ButtonVariant;
     size?: ButtonSize;
     disabled?: boolean;
-    isLoading?: boolean; // Show loading spinner and disable button
-    showAsHover?: boolean; // Show button in permanent hover state (for docs)
-    leftIcon?: ReactNode;  // Icon to display on the left
-    rightIcon?: ReactNode; // Icon to display on the right
+    isLoading?: boolean;
+    showAsHover?: boolean;
+    leftIcon?: ReactNode;
+    rightIcon?: ReactNode;
+    /** Merge props onto the immediate child instead of rendering a <button> */
+    asChild?: boolean;
 }
 
-// Spinner component for loading state
+// ── Spinner ──────────────────────────────────────────────────────
+
 const Spinner = ({ className }: { className?: string }) => (
     <svg
-        className={`animate-spin ${className}`}
+        className={cn('animate-spin', className)}
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
@@ -38,26 +45,39 @@ const Spinner = ({ className }: { className?: string }) => (
     </svg>
 );
 
-const variantStyles: Record<ButtonVariant, { base: string; hover: string; hoverStatic: string; disabled: string }> = {
+// ── Token-mapped variant styles ──────────────────────────────────
+
+const variantStyles: Record<
+    ButtonVariant,
+    { base: string; hover: string; hoverStatic: string; disabled: string }
+> = {
     primary: {
         base: 'bg-fill-button-primary text-text-button-primary border border-stroke-button-primary',
         hover: 'hover:bg-fill-button-primary-hover hover:border-stroke-button-primary-hover',
-        hoverStatic: 'bg-fill-button-primary-hover border-stroke-button-primary-hover text-text-button-primary',
-        disabled: 'bg-fill-button-primary-disabled border-stroke-button-primary-disabled text-text-button-primary-disabled cursor-not-allowed',
+        hoverStatic:
+            'bg-fill-button-primary-hover border-stroke-button-primary-hover text-text-button-primary',
+        disabled:
+            'bg-fill-button-primary-disabled border-stroke-button-primary-disabled text-text-button-primary-disabled cursor-not-allowed',
     },
     secondary: {
         base: 'bg-fill-button-secondary text-text-button-secondary border border-stroke-button-secondary',
         hover: 'hover:bg-fill-button-secondary-hover hover:border-stroke-button-secondary-hover',
-        hoverStatic: 'bg-fill-button-secondary-hover border-stroke-button-secondary-hover text-text-button-secondary',
-        disabled: 'bg-fill-button-secondary-disabled border-stroke-button-secondary-disabled text-text-button-secondary-disabled cursor-not-allowed',
+        hoverStatic:
+            'bg-fill-button-secondary-hover border-stroke-button-secondary-hover text-text-button-secondary',
+        disabled:
+            'bg-fill-button-secondary-disabled border-stroke-button-secondary-disabled text-text-button-secondary-disabled cursor-not-allowed',
     },
     tertiary: {
         base: 'bg-fill-button-tertiary text-text-button-tertiary border border-stroke-button-tertiary',
         hover: 'hover:text-text-button-tertiary-hover border border-stroke-button-tertiary',
-        hoverStatic: 'text-text-button-tertiary-hover border border-stroke-button-tertiary',
-        disabled: 'text-text-button-tertiary-disabled cursor-not-allowed border border-stroke-button-tertiary',
+        hoverStatic:
+            'text-text-button-tertiary-hover border border-stroke-button-tertiary',
+        disabled:
+            'text-text-button-tertiary-disabled cursor-not-allowed border border-stroke-button-tertiary',
     },
 };
+
+// ── Token-mapped size styles ─────────────────────────────────────
 
 const sizeStyles: Record<ButtonSize, string> = {
     sm: 'px-[var(--button-padding-x-sm)] py-[var(--button-padding-y-sm)] text-fs-sm leading-lh-md rounded-[var(--button-radius-sm)] h-[var(--button-height-sm)]',
@@ -65,74 +85,82 @@ const sizeStyles: Record<ButtonSize, string> = {
     lg: 'px-[var(--button-padding-x-lg)] py-[var(--button-padding-y-lg)] text-fs-lg leading-lh-2xl rounded-[var(--button-radius-lg)] h-[var(--button-height-lg)]',
 };
 
-// Icon size classes based on button size
 const iconSizeStyles: Record<ButtonSize, string> = {
     sm: 'w-4 h-4',
     md: 'w-5 h-5',
     lg: 'w-5 h-5',
 };
 
-// Gap between icon and text
 const gapStyles: Record<ButtonSize, string> = {
     sm: 'gap-1',
     md: 'gap-1.5',
     lg: 'gap-2',
 };
 
-export function Button({
-    children,
-    variant = 'primary',
-    size = 'md',
-    disabled = false,
-    isLoading = false,
-    showAsHover = false,
-    leftIcon,
-    rightIcon,
-    className = '',
-    ...props
-}: ButtonProps) {
-    const styles = variantStyles[variant];
-    const isDisabled = disabled || isLoading;
+// ── Component ────────────────────────────────────────────────────
 
-    let stateClasses: string;
-    if (isDisabled) {
-        stateClasses = styles.disabled;
-    } else if (showAsHover) {
-        stateClasses = styles.hoverStatic;
-    } else {
-        stateClasses = `${styles.base} ${styles.hover}`;
-    }
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+    (
+        {
+            children,
+            variant = 'primary',
+            size = 'md',
+            disabled = false,
+            isLoading = false,
+            showAsHover = false,
+            leftIcon,
+            rightIcon,
+            asChild = false,
+            className,
+            ...props
+        },
+        ref,
+    ) => {
+        const Comp = asChild ? Slot : 'button';
+        const styles = variantStyles[variant];
+        const isDisabled = disabled || isLoading;
 
-    const buttonClasses = [
-        'inline-flex items-center justify-center font-regular border',
-        sizeStyles[size],
-        gapStyles[size],
-        stateClasses,
-        className,
-    ].join(' ');
+        const stateClasses = isDisabled
+            ? styles.disabled
+            : showAsHover
+              ? styles.hoverStatic
+              : `${styles.base} ${styles.hover}`;
 
-    const iconClasses = iconSizeStyles[size];
+        const iconClasses = iconSizeStyles[size];
 
-    // Determine what to show in left icon position
-    const leftContent = isLoading ? (
-        <Spinner className={iconClasses} />
-    ) : leftIcon ? (
-        <span className={`inline-flex shrink-0 ${iconClasses}`}>{leftIcon}</span>
-    ) : null;
+        const leftContent = isLoading ? (
+            <Spinner className={iconClasses} />
+        ) : leftIcon ? (
+            <span className={cn('inline-flex shrink-0', iconClasses)}>{leftIcon}</span>
+        ) : null;
 
-    return (
-        <button
-            className={buttonClasses}
-            disabled={isDisabled}
-            {...props}
-        >
-            {leftContent}
-            {children}
-            {rightIcon && !isLoading && <span className={`inline-flex shrink-0 ${iconClasses}`}>{rightIcon}</span>}
-        </button>
-    );
-}
+        const rightContent =
+            rightIcon && !isLoading ? (
+                <span className={cn('inline-flex shrink-0', iconClasses)}>{rightIcon}</span>
+            ) : null;
 
+        return (
+            <Comp
+                ref={ref}
+                className={cn(
+                    'inline-flex items-center justify-center font-normal border transition-colors',
+                    sizeStyles[size],
+                    gapStyles[size],
+                    stateClasses,
+                    className,
+                )}
+                disabled={isDisabled}
+                {...props}
+            >
+                {leftContent}
+                <Slottable>{children}</Slottable>
+                {rightContent}
+            </Comp>
+        );
+    },
+);
+
+Button.displayName = 'Button';
 export default Button;
 
 

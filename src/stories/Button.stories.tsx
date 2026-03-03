@@ -37,12 +37,12 @@ const iconOptions: Record<string, ReactNode> = {
 
 /**
  * Button Component
- * 
- * A versatile button component with three variants (primary, secondary, tertiary),
- * three sizes (sm, md, lg), and support for disabled and hover states.
- * Now includes support for left and right icons.
- * 
- * Styled using design tokens from Figma Token Studio integrated via TailwindCSS.
+ *
+ * Built on Radix UI Slot for polymorphic rendering (asChild pattern).
+ * Styled with Supernova.io design tokens mapped through Tailwind CSS v4.
+ *
+ * Three variants (primary, secondary, tertiary), three sizes (sm, md, lg),
+ * and support for disabled, loading, and hover states with left/right icons.
  */
 const meta: Meta<typeof Button> = {
     title: 'Components/Button',
@@ -51,7 +51,8 @@ const meta: Meta<typeof Button> = {
         layout: 'centered',
         docs: {
             description: {
-                component: 'A button component styled with Figma design tokens via TailwindCSS. Supports left and right icons.',
+                component:
+                    'A polymorphic button built on Radix UI Slot, styled with Supernova.io design tokens via Tailwind CSS v4. Supports asChild for rendering as any element, plus left/right icons.',
             },
         },
     },
@@ -115,6 +116,14 @@ const meta: Meta<typeof Button> = {
         children: {
             control: 'text',
             description: 'The content of the button',
+        },
+        asChild: {
+            control: 'boolean',
+            description:
+                'When true, the button merges its props onto the immediate child element instead of rendering a <button>. Powered by Radix UI Slot.',
+            table: {
+                defaultValue: { summary: 'false' },
+            },
         },
         // Hide inherited HTML attributes from controls
         className: { table: { disable: true } },
@@ -435,6 +444,66 @@ export const AllStates: Story = {
 /**
  * All icon variations for comparison
  */
+// ===== asChild (Polymorphic) Stories =====
+
+/**
+ * Render as an anchor link using asChild.
+ * All button styles are forwarded to the child <a> element.
+ */
+export const AsLink: Story = {
+    args: {
+        variant: 'primary',
+        children: 'Go to Docs',
+        asChild: true,
+        rightIcon: <ArrowRightIcon />,
+    },
+    render: (args) => (
+        <Button {...args}>
+            <a href="https://supernova.io" target="_blank" rel="noopener noreferrer">
+                {args.children}
+            </a>
+        </Button>
+    ),
+};
+
+/**
+ * Secondary variant rendered as an anchor link.
+ */
+export const AsLinkSecondary: Story = {
+    args: {
+        variant: 'secondary',
+        children: 'Visit Storybook',
+        asChild: true,
+        leftIcon: <ArrowLeftIcon />,
+    },
+    render: (args) => (
+        <Button {...args}>
+            <a href="https://storybook.js.org" target="_blank" rel="noopener noreferrer">
+                {args.children}
+            </a>
+        </Button>
+    ),
+};
+
+/**
+ * All three variants rendered as links for comparison.
+ */
+export const AsChildVariations: Story = {
+    render: () => (
+        <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
+            <Button variant="primary" asChild rightIcon={<ArrowRightIcon />}>
+                <a href="#primary">Primary Link</a>
+            </Button>
+            <Button variant="secondary" asChild rightIcon={<ArrowRightIcon />}>
+                <a href="#secondary">Secondary Link</a>
+            </Button>
+            <Button variant="tertiary" asChild rightIcon={<ArrowRightIcon />}>
+                <a href="#tertiary">Tertiary Link</a>
+            </Button>
+        </div>
+    ),
+};
+
 export const AllIconVariations: Story = {
     render: () => (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
